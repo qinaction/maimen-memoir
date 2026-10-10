@@ -1,0 +1,9 @@
+# 真实账户数据不进公开仓库（含 accountId、券信息）
+demo/*.json
+
+# 真实 Token 配置
+mcp-config.json
+.env
+
+# 系统
+.DS_Store
