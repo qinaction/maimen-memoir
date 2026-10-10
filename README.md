@@ -31,12 +31,24 @@
 
 ## 使用示例
 
+### 方式一：三步管线（脚本直跑）
+
+```bash
+# 1. 采集（8 个只读 MCP 工具）
+MCD_TOKEN=你的Token python3 scripts/collect.py work/
+# 2. 聚合为 stats.json（--mock 可产出演示数据）
+python3 scripts/aggregate.py work/ work/stats.json
+# 3. 渲染单文件 HTML 年报
+python3 scripts/render.py work/stats.json work/yearbook.html
 ```
-用户：生成我的 2026 麦门年鉴
-AI：  （调用 order-list / query-my-account / query-my-coupons 等工具采集数据）
-      （渲染单文件 HTML 年报）
-      ✅ 已生成 demo/yearbook.html，含 6 大版块……
-```
+
+### 方式二：一句话生成（Skill）
+
+在 WorkBuddy / Claude Code 中安装 `skills/maimen-memoir/` 后说：
+
+> 「帮我生成我的麦门年鉴」
+
+AI 会自动走完采集 → 聚合 → 渲染三步，并打开成品。
 
 ## 目标用户
 
